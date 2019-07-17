@@ -1,0 +1,30 @@
+{
+    "appName": "FlatManagement",
+    "port": "80",
+    "hostingOrigin": "https://flatmanagement.herokuapp.com/",
+    "postgresql": {
+        "host": "ec2-50-16-241-91.compute-1.amazonaws.com",
+        "port": "5432",
+        "db": "dc0ibnfehko372",
+        "authenticationDatabase": "admin",
+        "username": "bhcczdtkrdflls",
+        "password": "04579c7f7c9c90d0433b463d236fb0d69c0bf204613b72497e1f492a4ffe9d68"
+    },
+    "expTimes": {
+        "welcomeEmail": 7200000,
+        "forgotPasswordEmail": 7200000
+    },
+    "email": {
+        "from": "worksintriton@gmail.com",
+        "config": {
+            "pool": true,
+            "host": "smtp.gmail.com",
+            "port": 465,
+            "secure": true, // use TLS
+            "auth": {
+                "user": "worksintriton@gmail.com",
+                "pass": "TritonAndroid2016"
+            }
+        }
+    }
+}

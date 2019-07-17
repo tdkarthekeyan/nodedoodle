@@ -1,0 +1,151 @@
+{
+  "/auth/register": {
+    "POST": {
+      "body": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "emailId": {
+            "type": "string"
+          },
+          "phoneNo": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "dob": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "required": ["name"],
+        "errorMessage": {
+          "additionalProperties": "should not have additional properties",
+          "required": {
+            "name": "should have required property name"
+          },
+          "properties": {
+            "name": "name must be string"
+          }
+        }
+      }
+    }
+  },
+  "/auth/sendfrndreq": {
+    "POST": {
+      "body": {
+        "type": "object",
+        "properties": {
+          "user_id": {
+            "type": "number"
+          },
+          "req_id": {
+            "type": "number"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "required": ["user_id"],
+        "errorMessage": {
+          "additionalProperties": "should not have additional properties",
+          "required": {
+            "user_id": "should have required property user_id"
+          },
+          "properties": {
+            "user_id": "user_id must be string"
+          }
+        }
+      }
+    }
+  },
+  "/auth/listfrndreq": {
+    "POST": {
+      "body": {
+        "type": "object",
+        "properties": {
+          "user_id": {
+            "type": "number"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "required": ["user_id"],
+        "errorMessage": {
+          "additionalProperties": "should not have additional properties",
+          "required": {
+            "user_id": "should have required property user_id"
+          },
+          "properties": {
+            "user_id": "user_id must be string"
+          }
+        }
+      }
+    }
+  },
+  "/auth/login": {
+    "POST": {
+      "body": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "required": ["userId"],
+        "errorMessage": {
+          "additionalProperties": "should not have additional properties",
+          "required": {
+            "userId": "should have required property userId"
+          },
+          "properties": {
+            "userId": "userId must be string"
+          }
+        }
+      }
+    }
+  },
+
+  "/auth/updatefrndreq": {
+    "POST": {
+      "body": {
+        "type": "object",
+        "properties": {
+          "user_id": {
+            "type": "number"
+          },
+          "req_id": {
+            "type": "number"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "required": ["user_id"],
+        "errorMessage": {
+          "additionalProperties": "should not have additional properties",
+          "required": {
+            "user_id": "should have required property user_id"
+          },
+          "properties": {
+            "user_id": "user_id must be string"
+          }
+        }
+      }
+    }
+  }
+}
