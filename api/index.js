@@ -25,6 +25,7 @@ app.use("*", [
 app.options("*", cors());
 
 addRoute("/auth/register", "POST", [middleware.register]);
+addRoute("/auth/list", "POST", [middleware.list]);
 addRoute("/auth/login", "POST", [middleware.login]);
 addRoute("/auth/sendfrndreq", "POST", [middleware.sendfrndreq]);
 addRoute("/auth/listfrnds_req", "POST", [middleware.listfrndreq]);

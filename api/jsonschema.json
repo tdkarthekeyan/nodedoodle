@@ -37,19 +37,13 @@
       }
     }
   },
-  "/auth/sendfrndreq": {
+  "/auth/list": {
     "POST": {
       "body": {
         "type": "object",
         "properties": {
           "user_id": {
             "type": "number"
-          },
-          "req_id": {
-            "type": "number"
-          },
-          "status": {
-            "type": "string"
           }
         },
         "additionalProperties": false,
@@ -66,7 +60,33 @@
       }
     }
   },
-  "/auth/listfrndreq": {
+  "/auth/sendfrndreq": {
+    "POST": {
+      "body": {
+        "type": "object",
+        "properties": {
+          "user_id": {
+            "type": "number"
+          },
+          "req_id": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "required": ["user_id"],
+        "errorMessage": {
+          "additionalProperties": "should not have additional properties",
+          "required": {
+            "user_id": "should have required property user_id"
+          },
+          "properties": {
+            "user_id": "user_id must be string"
+          }
+        }
+      }
+    }
+  },
+  "/auth/listfrnds_req": {
     "POST": {
       "body": {
         "type": "object",

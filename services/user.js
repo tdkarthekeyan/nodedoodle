@@ -93,6 +93,19 @@ user.userlogin = function(userInput, resultCallback) {
       console.log("ERROR:", error);
     });
 };
+user.listuser = function(userInput, resultCallback) {
+  var executor = db.getdaata.getdb();
+  //\''+userInput.appartment_ukey+'\'
+  executor
+    .any('SELECT * from public."user"', [])
+    .then(data => {
+      resultCallback(null, data);
+    })
+    .catch(error => {
+      resultCallback(error, null);
+      console.log("ERROR:", error);
+    });
+};
 user.sendfriendreq = function(userInput, resultCallback) {
   var executor = db.getdaata.getdb();
   //\''+userInput.appartment_ukey+'\'

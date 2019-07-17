@@ -78,6 +78,43 @@ function register(req, res, next) {
     }
   ]);
 }
+function list(req, res, next) {
+  async.waterfall([
+    function(waterfallCallback) {
+      services.user.listuser(req.body, function(err, user) {
+        if (err) {
+          console.log(err);
+
+          //   req.log.error(
+          //     {
+          //       error: err
+          //     },
+          //     "Error while getting available users by mobiles"
+          //   );
+          //   return res.json(utils.errors["500"]);
+        }
+        waterfallCallback(null, req, user);
+      });
+    },
+    function(req, user, waterfallCallback) {
+      var mydata = [];
+      for (let i = 0; i < user.length; i++) {
+        if (user[i].user_id == req.body.user_id) {
+        } else {
+          mydata.push(user[i]);
+        }
+      }
+      return res.json(
+        _.merge(
+          {
+            data: mydata
+          },
+          utils.errors["200"]
+        )
+      );
+    }
+  ]);
+}
 function login(req, res, next) {
   async.waterfall([
     function(waterfallCallback) {
@@ -108,7 +145,7 @@ function login(req, res, next) {
 function sendfrndreq(req, res, next) {
   async.waterfall([
     function(waterfallCallback) {
-      services.user.sendfriendreq(req.body.userId, function(err, result) {
+      services.user.sendfriendreq(req.body, function(err, result) {
         if (err) {
           req.log.error(
             {
@@ -194,6 +231,7 @@ exports.init = init;
 exports.passport = passport;
 
 exports.register = register;
+exports.list = list;
 exports.login = login;
 exports.sendfrndreq = sendfrndreq;
 exports.listfrndreq = listfrndreq;
