@@ -21,7 +21,7 @@
   "homepage": "https://github.com/worksintriton/Flatmanagement-Node#readme",
   "dependencies": {
     "ajv-errors": "^1.0.0",
-    "async": "^2.6.1",
+    "async": "^3.2.2",
     "base64-to-image": "^1.0.2",
     "base64url": "^3.0.1",
     "bcryptjs": "^2.4.3",
